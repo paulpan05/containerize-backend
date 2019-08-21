@@ -1,5 +1,7 @@
+const { gql } = require('apollo-server-lambda');
+
 // Construct a schema, using GraphQL schema language
-export const schema = gql`
+exports.schema = gql`
   type Query {
     hello: String
   }

@@ -1,5 +1,5 @@
 // Provide resolver functions for your schema fields
-export const resolvers = {
+exports.resolvers = {
   Query: {
     hello: () => 'Hello world!',
   },
