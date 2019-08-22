@@ -7,7 +7,7 @@ provider:
 functions:
   graphql:
     # this is formatted as <FILENAME>.<HANDLER>
-    handler: handler.graphqlHandler
+    handler: src/handler.graphqlHandler
     events:
     - http:
         path: graphql
@@ -17,3 +17,6 @@ functions:
         path: graphql
         method: get
         cors: true
+plugins:
+  - serverless-dynamodb-local
+  - serverless-offline

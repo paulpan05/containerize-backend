@@ -13,6 +13,8 @@
   },
   "devDependencies": {
     "aws-sdk": "^2.515.0",
-    "eslint": "^6.2.1"
+    "eslint": "^6.2.1",
+    "serverless-dynamodb-local": "^0.2.38",
+    "serverless-offline": "^5.10.1"
   }
 }

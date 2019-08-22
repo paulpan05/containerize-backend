@@ -7,4 +7,4 @@ const typeDefs = gql`
   }
 `;
 
-exports.schema = typeDefs;
+exports.typeDefs = typeDefs;
