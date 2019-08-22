@@ -4,7 +4,7 @@ const { resolvers } = require('./resolvers');
 
 const server = new ApolloServer({ schema, resolvers });
 
-exports.notesHandler = server.createHandler({
+exports.graphqlHandler = server.createHandler({
   cors: {
     origin: true,
     credentials: true,
