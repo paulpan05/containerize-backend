@@ -12,29 +12,29 @@ provider:
     tableName: ${self:custom.tableName}
   iamRoleStatements:
     - Effect: Allow
-    Action:
-      - dynamodb:DescribeTable
-      - dynamodb:Query
-      - dynamodb:Scan
-      - dynamodb:GetItem
-      - dynamodb:PutItem
-      - dynamodb:UpdateItem
-      - dynamodb:DeleteItem
-    Resource:
-      - "Fn::GetAtt": [ NotesTable, Arn ]
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource:
+        - "Fn::GetAtt": [ NotesTable, Arn ]
 functions:
   graphql:
     # this is formatted as <FILENAME>.<HANDLER>
     handler: src/handler.graphqlHandler
     events:
-    - http:
-        path: graphql
-        method: post
-        cors: true
-    - http:
-        path: graphql
-        method: get
-        cors: true
+      - http:
+          path: graphql
+          method: post
+          cors: true
+      - http:
+          path: graphql
+          method: get
+          cors: true
 resources:
   - ${file(resources/api-gateway-errors.yml)}
   - ${file(resources/dynamodb-table.yml)} 
